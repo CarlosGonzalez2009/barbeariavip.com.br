@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agendamento de Horário</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+        form {
+            display: inline-block;
+            text-align: left;
+            border: 2px solid #ccc;
+            padding: 20px;
+            border-radius: 10px;
+        }
+        label {
+            display: block;
+            margin-bottom: 10px;
+        }
+        input[type="text"], input[type="time"] {
+            padding: 8px;
+            width: 200px;
+            margin-bottom: 10px;
+        }
+        input[type="submit"] {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Agendamento de Horário</h2>
+
+    <form action="#" onsubmit="return validarFormulario()">
+        <label for="nome">Seu Nome:</label>
+        <input type="text" id="nome" name="nome" required><br>
+        
+        <label for="horario">Horário desejado:</label>
+        <select id="horario" name="horario" required>
+            <option value="">Selecione um horário</option>
+            <option value="09:00">09:00</option>
+            <option value="10:00">10:00</option>
+            <option value="11:00">11:00</option>
+            <!-- Adicione mais opções de horário conforme necessário -->
+        </select><br>
+
+        <input type="submit" value="Agendar">
+    </form>
+
+    <script>
+        function validarFormulario() {
+            var nome = document.getElementById("nome").value;
+            var horario = document.getElementById("horario").value;
+
+            if (nome.trim() === "") {
+                alert("Por favor, insira seu nome.");
+                return false;
+            }
+
+            if (horario === "") {
+                alert("Por favor, selecione um horário.");
+                return false;
+            }
+
+            
+
+            return true;
+        }
+    </script>
+
+</body>
+</html>
